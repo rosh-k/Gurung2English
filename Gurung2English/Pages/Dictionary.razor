@@ -1,0 +1,100 @@
+﻿@page "/dictionary/{value}"
+
+<PageTitle>Gurung2English</PageTitle>
+
+@using MudBlazor
+@inject HttpClient Http
+<MudContainer>    
+    @if (_resultTranslate is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {                
+         <MudText>                          
+             <MudList Clickable="false">                 
+                  <MudListItem Text="Pronunciation Tips" Icon="@Icons.Material.Filled.LightbulbCircle" />
+                  <MudListItem Text="The acute mark [á] indicates high tone : à is a as in car" Icon="@Icons.Material.Filled.FormatListBulleted" />
+                  <MudListItem Text="The wiggly line [ã], nasalization : ã is an as in man" Icon="@Icons.Material.Filled.FormatListBulleted" />
+                  <MudListItem Text="š (S with caron) is used in various contexts representing the sh sound like in the word show" Icon="@Icons.Material.Filled.FormatListBulleted" />
+                  <MudListItem Text="The /h/ sound is called the “voiceless glottal fricative”: the sound is made with the motion of your vocal chords but is not voiced" Icon="@Icons.Material.Filled.FormatListBulleted" />                  
+             </MudList>
+           
+   </MudText>
+        <MudText Typo="Typo.h6">Search result for letters starting @Value</MudText>       
+        <MudTable Items="@_resultTranslate" Dense="@_dense" Hover="@_hover" Bordered="@_bordered" Striped="@_striped" Filter="new Func<Translate,bool>(_filterFunc)" @bind-SelectedItem="_selectedItem">
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">Gurung to English Dictionary</MudText>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh>Gurung Word</MudTh>
+                <MudTh>English Translation</MudTh> 
+                <MudTh>Nepali Translation</MudTh> 
+                <MudTh>Description</MudTh> 
+                <MudTh>Pronunciation</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                 <MudTd DataLabel="GurungKey">@context.GurungKey</MudTd>
+                 <MudTd DataLabel="EnglishValue">@context.EnglishValue</MudTd>
+                 <MudTd DataLabel="NepaliValue">@context.NepaliValue</MudTd>
+                 <MudTd DataLabel="Description">@context.Description</MudTd>
+                 <MudTd> <MudIconButton Icon="@Icons.Material.Filled.RecordVoiceOver" Href="@($"https://translate.google.com/?sl=ne&tl=auto&text={@context.GurungKey}&op=pronunciation")" target="_blank"></MudIconButton></MudTd>            
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+        </MudTable>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string Value { get; set; }
+    private MudTable<Translate> _tableTranslate;
+    private List<Translate>? _resultTranslate;
+    private bool _dense = false;
+    private bool _hover = true;
+    private bool _striped = false;
+    private bool _bordered = false;
+    private string _searchString = "";
+    private Translate _selectedItem = null;
+    private HashSet<Translate> selectedItems = new HashSet<Translate>();
+
+    private bool _filterFunc(Translate element) => FilterFunc(element, _searchString);
+
+    private bool FilterFunc(Translate element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.GurungKey.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.EnglishValue.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;     
+        return false;
+    }
+
+    private void PageChanged(int i)
+    {
+        _tableTranslate.NavigateTo(i - 1);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {        
+        string key = Value;        
+        string filePath = @"data\";
+        string fileName = $"{Value}.json";
+        string fullFileName = $"{filePath}{fileName}";                
+        try
+        {
+            _resultTranslate = await Http.GetFromJsonAsync<List<Translate>>(fullFileName);
+        }
+        catch
+        {
+            _resultTranslate = new List<Translate>();    
+
+        }      
+    }            
+}
+
