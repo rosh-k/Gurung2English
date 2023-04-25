@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Gurung2English.dll": "sha256-oLd3+xvMuVBwN2HOL7E+p7Kfw+UepkhMV4hsPkWFIc4=",
+      "Gurung2English.dll": "sha256-dCEMQ9OhJcKLIuwfoufae9bq0edz\/NbzhKhwtRWHr+I=",
       "Microsoft.AspNetCore.Components.dll": "sha256-wtrcxbUgwz+6MGadCXGxzC9dNbiLZ0B5x9aZ0T\/Xq3U=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-udNyUy\/sZAZ\/kxTnPv6xOca1oek7ooUvUN5ljQbHKxo=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-DmFErVY8MIcNeSZmGI7R+qx\/SN7JbvHgHlhO26\/Ww7E=",
@@ -25,7 +25,7 @@
       "Microsoft.JSInterop.dll": "sha256-C7K3PWEgm+L4VagHkAWzluu+nhYjSISLm106akflwrE=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-lGzGmghWC2n88jfdnt\/ZlgOBbU9tjhYhdRO8P4zXTXo=",
       "Microsoft.Net.Http.Headers.dll": "sha256-P66ftDrXwc6ayND8uYzIk0CPQy1GjNZAPHx9RMhi3V4=",
-      "MudBlazor.dll": "sha256-YsbhU0Fc+6k7n4806Syc9EzzOudpEUr0mwS+EqlCisg=",
+      "MudBlazor.dll": "sha256-L2n5ABcMakZsPxFhOWU1zv8Lu63EKs6BCb9wjE236EM=",
       "netstandard.dll": "sha256-4gmBJE8k12DTRn9FcOyPaa5s0IyIbXrcmHTiiEEoZEI=",
       "System.Buffers.dll": "sha256-WDgcaUbBz5uavvGK8utWdhV5TwHfqExTpMXU6tJizEE=",
       "System.Collections.Concurrent.dll": "sha256-RVGlaLGht+tJphUyKNQimyOc0SFPlhyrFR+4TV4iGsQ=",
