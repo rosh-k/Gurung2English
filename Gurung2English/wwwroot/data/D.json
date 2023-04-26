@@ -1,1 +1,44 @@
-[{"GurungKey":"?il","EnglishValue":"edge of cliff","NepaliValue":"dil","Description":"bank of river"},{"GurungKey":"?õ?aa","EnglishValue":"hollow log","NepaliValue":"","Description":""},{"GurungKey":"?oridiba","EnglishValue":"to guide or show","NepaliValue":"bato dekhaunu","Description":""},{"GurungKey":"dae","EnglishValue":"threshing of rice with oxen","NepaliValue":"daai","Description":"dae jhõbà;"},{"GurungKey":"dhi","EnglishValue":"house or home","NepaliValue":"ghar","Description":"dhi nhora;"},{"GurungKey":"dhu`","EnglishValue":"tree","NepaliValue":"rukh","Description":""},{"GurungKey":"dhubà","EnglishValue":"rest upon or take support","NepaliValue":"teknu","Description":""}]
+[
+  {
+    "GurungKey": "ɖil",
+    "EnglishValue": "edge of cliff",
+    "NepaliValue": "dil",
+    "Description": "bank of river"
+  },
+  {
+    "GurungKey": "ɖõɖaa",
+    "EnglishValue": "hollow log",
+    "NepaliValue": "",
+    "Description": ""
+  },
+  {
+    "GurungKey": "ɖoridiba",
+    "EnglishValue": "to guide or show",
+    "NepaliValue": "bato dekhaunu",
+    "Description": ""
+  },
+  {
+    "GurungKey": "dae",
+    "EnglishValue": "threshing of rice with oxen",
+    "NepaliValue": "daai",
+    "Description": "dae jhõbà;"
+  },
+  {
+    "GurungKey": "dhi",
+    "EnglishValue": "house or home",
+    "NepaliValue": "ghar",
+    "Description": "dhi nhora;"
+  },
+  {
+    "GurungKey": "dhu`",
+    "EnglishValue": "tree",
+    "NepaliValue": "rukh",
+    "Description": ""
+  },
+  {
+    "GurungKey": "dhubà",
+    "EnglishValue": "rest upon or take support",
+    "NepaliValue": "teknu",
+    "Description": ""
+  }
+]
