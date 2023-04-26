@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Gurung2English.dll": "sha256-dCEMQ9OhJcKLIuwfoufae9bq0edz\/NbzhKhwtRWHr+I=",
+      "Gurung2English.dll": "sha256-j5A3otlvxK3Gu58ERSOLmrsDjsZa4+hWJ+dJHOqqVRg=",
       "Microsoft.AspNetCore.Components.dll": "sha256-wtrcxbUgwz+6MGadCXGxzC9dNbiLZ0B5x9aZ0T\/Xq3U=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-udNyUy\/sZAZ\/kxTnPv6xOca1oek7ooUvUN5ljQbHKxo=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-DmFErVY8MIcNeSZmGI7R+qx\/SN7JbvHgHlhO26\/Ww7E=",
